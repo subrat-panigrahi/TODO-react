@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ButtonGroup from './buttons'
+import taskJson from './tasks.json';
+import TaskList from './taskList';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
 
 class App extends Component {
   render() {
+      console.log(taskJson.pending_tasks);
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          <h1 className="App-title">My sticky notes</h1>
+
+          <TaskList pendingTasks={taskJson.pending_tasks}/>
+          <ButtonGroup/>
+
       </div>
     );
   }
